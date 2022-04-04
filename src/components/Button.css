@@ -1,0 +1,51 @@
+.button button {
+    font: inherit;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    border: 1px solid #f7f7f7;
+    background-color: #4a474c;
+    color: white;
+    border-radius: 12px;
+    margin-right: 1rem;  
+  }
+
+
+  
+  .component-button-panel > div {
+    width: 100%;
+    margin-bottom: 1px;
+    flex: 1 0 auto;
+    display: flex;
+  }
+
+  .round-button {
+    height: 80px;
+    line-height: 40px;
+    width: 80px;  
+    font-size: 2em;
+    font-weight: bold;
+    border-radius: 50%;
+    background-color: #3f423f;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    position: fixed
+    
+    
+}
+
+
+.round-button_zero {
+    height: 80px;
+    line-height: 50px;  
+    width: 160px;  
+    font-size: 2em;
+    font-weight: bold;
+    border-radius: 30%;
+    background-color: #3f423f;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    position: fixed
+    
+}

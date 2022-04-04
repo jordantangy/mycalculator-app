@@ -1,0 +1,11 @@
+.display {
+    padding: 3rem 10.5rem;
+    border: 1px solid #f7f7f7;
+    background-color: #413c43;
+    color: white;
+    border-radius: 15px;
+    margin-left: 0.4rem;
+    margin-top: 2rem;
+    width: 50px;
+    display: fixed;
+  }
