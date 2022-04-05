@@ -9,7 +9,7 @@ const Button = (props) => {
     const objNum = {
       number: num,
     };
-    props.numHandler(objNum);
+    props.exprHandler(objNum);
   };
 
   return (
