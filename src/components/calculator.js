@@ -1,11 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "./Button";
 import Screen from "./Screen";
+import "./Button.css";
+
+let sqrPressed = 0;
 
 const Calculator = (props) => {
   const [out, setout] = useState(""); //value to display on the screen
   const [expr, setExpr] = useState(""); //arithmetic expr as string
   const [result, setResult] = useState(0);
+  //const [pressed, setIsPressed] = useState(0);
+  //const [power, setPower] = useState(1);
+
+  // const output = () => {
+  //   setExpr("Math.pow(" + expr + "," + power + ")");
+  //   setIsPressed(0);
+  // };
+
+  // const test = (obj) => {
+  //   setPower(obj.numb);
+  //   output();
+  //   //setExpr("Math.pow(" + expr + "," + power + ")");
+  // };
+
+  // const sqrHandler = () => {
+  //   setIsPressed(1);
+  // };
+
+  const sqr2Handler = () => {
+    setExpr("Math.pow(" + expr + ",2)");
+  };
 
   const onTypeHandler = (obj) => {
     if (
@@ -60,6 +84,8 @@ const Calculator = (props) => {
         value={2}
         style={{ left: 110, top: 80 }}
         exprHandler={onTypeHandler}
+        //powhand={test}
+        //pressed={pressed}
       />
       <Button
         value={3}
@@ -98,22 +124,22 @@ const Calculator = (props) => {
       />
       <Button
         value={"x"}
-        style={{ left: 310, top: -740 }}
+        style={{ left: 310, top: -740, backgroundColor: "purple" }}
         exprHandler={onTypeHandler}
       />
       <Button
         value={"-"}
-        style={{ left: 310, top: -730 }}
+        style={{ left: 310, top: -730, backgroundColor: "purple" }}
         exprHandler={onTypeHandler}
       />
       <Button
         value={"+"}
-        style={{ left: 310, top: -720 }}
+        style={{ left: 310, top: -720, backgroundColor: "purple" }}
         exprHandler={onTypeHandler}
       />
       <Button
         value={"="}
-        style={{ left: 310, top: -710 }}
+        style={{ left: 310, top: -710, backgroundColor: "purple" }}
         exprHandler={eqHandler}
       />
       <Button
@@ -123,19 +149,33 @@ const Calculator = (props) => {
       />
       <Button
         value="C"
-        style={{ left: 110, top: -870 }}
+        style={{ left: 110, top: -870, backgroundColor: "red" }}
         exprHandler={cHandler}
       />
       <Button
         value="÷"
-        style={{ left: 310, top: -1265 }}
+        style={{ left: 310, top: -1265, backgroundColor: "orange" }}
         exprHandler={onTypeHandler}
       />
       <Button
         value="√"
-        style={{ left: 210, top: -1300 }}
+        style={{ left: 210, top: -1305, backgroundColor: "orange" }}
         exprHandler={onTypeHandler}
       />
+      <button
+        className="top_buttons"
+        style={{ left: 110, top: -1345, backgroundColor: "orange" }}
+        onClick={sqr2Handler}
+      >
+        x<sup>2</sup>
+      </button>
+      {/* <button
+        className="top_buttons"
+        style={{ left: -70, top: -1345 }}
+        onClick={sqrHandler}
+      >
+        x<sup>y</sup>
+      </button> */}
     </div>
   );
 };

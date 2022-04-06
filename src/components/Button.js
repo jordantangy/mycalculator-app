@@ -12,6 +12,13 @@ const Button = (props) => {
     props.exprHandler(objNum);
   };
 
+  // const powbtnHandler = () => {
+  //   const powObj = {
+  //     numb: num,
+  //   };
+  //   props.powhand(powObj);
+  // };
+
   return (
     <div>
       <button
