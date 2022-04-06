@@ -12,13 +12,18 @@ const Calculator = (props) => {
       obj.number !== "+" &&
       obj.number !== "-" &&
       obj.number !== "x" &&
-      obj.number !== "."
+      obj.number !== "÷" &&
+      obj.number !== "√"
     ) {
       setout(out + obj.number);
       setExpr(expr + obj.number);
     } else {
       if (obj.number === "x") {
         setExpr(expr + "*");
+      } else if (obj.number === "÷") {
+        setExpr(expr + "/");
+      } else if (obj.number === "√") {
+        setExpr("Math.sqrt(" + expr + ")");
       } else {
         setExpr(expr + obj.number);
       }
@@ -120,6 +125,16 @@ const Calculator = (props) => {
         value="C"
         style={{ left: 110, top: -870 }}
         exprHandler={cHandler}
+      />
+      <Button
+        value="÷"
+        style={{ left: 310, top: -1265 }}
+        exprHandler={onTypeHandler}
+      />
+      <Button
+        value="√"
+        style={{ left: 210, top: -1300 }}
+        exprHandler={onTypeHandler}
       />
     </div>
   );

@@ -34,11 +34,10 @@
     
 }
 
-
-.round-button_zero {
-    height: 80px;
-    line-height: 50px;  
-    width: 160px;  
+.top_buttons {
+    height: 35px;
+    line-height: 35px;
+    width: 80px;  
     font-size: 2em;
     font-weight: bold;
     border-radius: 30%;
@@ -46,6 +45,6 @@
     color: white;
     text-align: center;
     cursor: pointer;
-    position: fixed
-    
+    position: relative
+
 }

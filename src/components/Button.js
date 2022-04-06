@@ -14,7 +14,15 @@ const Button = (props) => {
 
   return (
     <div>
-      <button style={props.style} className="round-button" onClick={btnHandler}>
+      <button
+        style={props.style}
+        className={
+          props.value !== "÷" && props.value !== "√"
+            ? "round-button"
+            : "top_buttons"
+        }
+        onClick={btnHandler}
+      >
         {props.value}
       </button>
     </div>
