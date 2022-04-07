@@ -12,19 +12,12 @@ const Button = (props) => {
     props.exprHandler(objNum);
   };
 
-  // const powbtnHandler = () => {
-  //   const powObj = {
-  //     numb: num,
-  //   };
-  //   props.powhand(powObj);
-  // };
-
   return (
     <div>
       <button
         style={props.style}
         className={
-          props.value !== "÷" && props.value !== "√"
+          props.value !== "÷" && props.value !== "√" && props.value !== "^"
             ? "round-button"
             : "top_buttons"
         }

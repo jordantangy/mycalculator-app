@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { SwitchComponent } from "@syncfusion/ej2-react-buttons";
 import Calculator from "./components/calculator";
 import "./components/calc.css";
 import "./components/Button.css";

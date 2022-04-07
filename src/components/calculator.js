@@ -1,58 +1,54 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Button from "./Button";
 import Screen from "./Screen";
-import "./Button.css";
 
-let sqrPressed = 0;
+let pwrPressed = 0;
 
 const Calculator = (props) => {
   const [out, setout] = useState(""); //value to display on the screen
   const [expr, setExpr] = useState(""); //arithmetic expr as string
   const [result, setResult] = useState(0);
-  //const [pressed, setIsPressed] = useState(0);
-  //const [power, setPower] = useState(1);
-
-  // const output = () => {
-  //   setExpr("Math.pow(" + expr + "," + power + ")");
-  //   setIsPressed(0);
-  // };
-
-  // const test = (obj) => {
-  //   setPower(obj.numb);
-  //   output();
-  //   //setExpr("Math.pow(" + expr + "," + power + ")");
-  // };
-
-  // const sqrHandler = () => {
-  //   setIsPressed(1);
-  // };
+  const [onOff, setonOff] = useState(false);
 
   const sqr2Handler = () => {
     setExpr("Math.pow(" + expr + ",2)");
   };
 
   const onTypeHandler = (obj) => {
-    if (
-      obj.number !== "+" &&
-      obj.number !== "-" &&
-      obj.number !== "x" &&
-      obj.number !== "÷" &&
-      obj.number !== "√"
-    ) {
-      setout(out + obj.number);
-      setExpr(expr + obj.number);
-    } else {
-      if (obj.number === "x") {
-        setExpr(expr + "*");
-      } else if (obj.number === "÷") {
-        setExpr(expr + "/");
-      } else if (obj.number === "√") {
-        setExpr("Math.sqrt(" + expr + ")");
-      } else {
+    if (onOff) {
+      if (
+        obj.number !== "+" &&
+        obj.number !== "-" &&
+        obj.number !== "x" &&
+        obj.number !== "÷" &&
+        obj.number !== "√"
+      ) {
+        setout(out + obj.number);
         setExpr(expr + obj.number);
+      } else {
+        if (obj.number === "x") {
+          setExpr(expr + "*");
+        } else if (obj.number === "÷") {
+          setExpr(expr + "/");
+        } else if (obj.number === "√") {
+          setExpr("Math.sqrt(" + expr + ")");
+        } else {
+          setExpr(expr + obj.number);
+        }
+        setout("");
       }
-      setout("");
+    } else {
+      return;
     }
+  };
+
+  const powerOn = () => {
+    setonOff(true);
+    setout("0");
+  };
+  const powerOff = () => {
+    setonOff(false);
+    setout("");
   };
 
   const eqHandler = () => {
@@ -169,13 +165,13 @@ const Calculator = (props) => {
       >
         x<sup>2</sup>
       </button>
-      {/* <button
-        className="top_buttons"
-        style={{ left: -70, top: -1345 }}
-        onClick={sqrHandler}
+      <button
+        className="on_off"
+        style={{ left: -70, top: -1355, backgroundColor: "orange" }}
+        onClick={onOff === false ? powerOn : powerOff}
       >
-        x<sup>y</sup>
-      </button> */}
+        ON/OFF
+      </button>
     </div>
   );
 };

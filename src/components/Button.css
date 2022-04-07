@@ -48,3 +48,19 @@
     position: relative
 
 }
+
+.on_off {
+  height: 40px;
+  line-height: 20px;
+  width: 80px;  
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 30%;
+  background-color: #3f423f;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  position: relative
+
+
+}

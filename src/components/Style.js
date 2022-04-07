@@ -2,9 +2,9 @@ import "./style.css";
 
 const Style = () => {
   return (
-    <div class="loader-wrapper">
-      <div class="loader">
-        <div class="loader loader-inner"></div>
+    <div className="loader-wrapper">
+      <div className="loader">
+        <div className="loader loader-inner"></div>
       </div>
     </div>
   );

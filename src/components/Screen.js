@@ -7,7 +7,6 @@ const Screen = (props) => {
         {props.val.includes("=")
           ? Math.round(props.res * 100 + Number.EPSILON) / 100
           : props.val}
-        {console.log(props.exp)}
       </div>
     </div>
   );
