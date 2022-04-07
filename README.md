@@ -1,6 +1,6 @@
-# Link to the app
+# Try it !
 
-https://mycalculator-app.vercel.app/
+https://mycalculator-app.vercel.app/ (don't forget to press the on/off button)
 
 # Getting Started with Create React App
 
